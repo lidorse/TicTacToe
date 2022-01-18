@@ -49,7 +49,7 @@ while True:
                 lists[x][y] = z
     else:
         print('Invalid position')
-
+#robot
     rd1 = random.randint(0, 2)
     rd2 = random.randint(0, 2)
     x = rd1
