@@ -31,25 +31,27 @@ def winCheck():
         return print('We Have A Winner')
     elif lists[0][2] == lists[1][1] == lists[2][0] == m2:
         return print('We Have A Winner')
+    return
 
 while True:
-    x = int(input('Please enter row number: ').upper())
-    y = int(input('Please enter Ta number: ').upper())
+    try:
+        x = int(input('Please enter row number: ').upper())
+        y = int(input('Please enter Ta number: ').upper())
 
-    if 0 <= x <= 2 and 0 <= y <= 2:  #checks if input in range
-        if lists[x][y] == 'X' and 'O':
-            print('Place Occupied...')
-        else:
-            z = input('Choose X or O: ').upper()
-            if z != 'X' and z != 'O':
-                print('Wrong matrix')
+        if 0 <= x <= 2 and 0 <= y <= 2:  #checks if input in range
+            if lists[x][y] == 'X' and 'O':
+                print('Place Occupied...')
             else:
-                lists[x][y] = z
-    else:
-        print('Invalid position')
+                z = input('Choose X or O: ').upper()
+                if z != 'X' and z != 'O':
+                    print('Wrong matrix')
+                else:
+                    lists[x][y] = z
+        else:
+            print('Invalid position')
+    except:
+        print('Error Value, Please try again')
+
     for i in lists:
         print(i)
     winCheck()
-
-
-
