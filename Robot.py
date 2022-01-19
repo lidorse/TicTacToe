@@ -1,7 +1,6 @@
 import random
 lists = [['_', '_', '_'], ['_', '_', '_'], ['_', '_', '_']]
 
-
 m1 = 'X'
 m2 = 'O'
 
@@ -33,6 +32,7 @@ def winCheck():
         return print('We Have A Winner')
     elif lists[0][2] == lists[1][1] == lists[2][0] == m2:
         return print('We Have A Winner')
+    return
 
 while True:
     x = int(input('Please enter row number: ').upper())
@@ -54,12 +54,12 @@ while True:
     rd2 = random.randint(0, 2)
     x = rd1
     y = rd2
-    if lists[x][y] != 'X' and 'O':
-        lists[x][y] = 'O'
-    else:
-        pass
+    while True:
+        if lists[x][y] == 'X' and 'O':
+            continue
+        else:
+            lists[x][y] = 'O'
+            break
     for i in lists:
         print(i)
     winCheck()
-
-
