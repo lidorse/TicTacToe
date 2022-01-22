@@ -9,30 +9,29 @@ def winCheck():
     The function checks if A player win in a row/column/hypotenuse
     :return: We Have A Winner
     '''
-    for row in lists:
+    for row in lists: #checks win in row
         if row == ['X', 'X', 'X'] or row == ['O', 'O', 'O']:
-            return print('We Have A Winner')
-    if lists[0][0] == lists[1][0] == lists[2][0] == m1:
-        return print('We Have A Winner')
+            return True
+    if lists[0][0] == lists[1][0] == lists[2][0] == m1: #checks win in column
+        return True
     elif lists[0][0] == lists[1][0] == lists[2][0] == m2:
-        return print('We Have A Winner')
+        return True
     elif lists[0][1] == lists[1][1] == lists[2][1] == m1:
-        return print('We Have A Winner')
+        return True
     elif lists[0][1] == lists[1][1] == lists[2][1] == m2:
-        return print('We Have A Winner')
+        return True
     elif lists[0][2] == lists[1][2] == lists[2][2] == m1:
-        return print('We Have A Winner')
+        return True
     elif lists[0][2] == lists[1][2] == lists[2][2] == m2:
-        return print('We Have A Winner')
-    elif lists[0][0] == lists[1][1] == lists[2][2] == m1:
-        return print('We Have A Winner')
+        return True
+    elif lists[0][0] == lists[1][1] == lists[2][2] == m1: #checks win in hypotenuse
+        return True
     elif lists[0][0] == lists[1][1] == lists[2][2] == m2:
-        return print('We Have A Winner')
+        return True
     elif lists[0][2] == lists[1][1] == lists[2][0] == m1:
-        return print('We Have A Winner')
+        return True
     elif lists[0][2] == lists[1][1] == lists[2][0] == m2:
-        return print('We Have A Winner')
-    return
+        return True
 
 while True:
     x = int(input('Please enter row number: ').upper())
@@ -40,11 +39,11 @@ while True:
 
     if 0 <= x <= 2 and 0 <= y <= 2:  #checks if input in range
         if lists[x][y] == 'X' and 'O':
-            print('Place Occupied...')
+            print('Place Occupied...') #checks if place occupied
         else:
             z = input('Choose X or O: ').upper()
             if z != 'X' and z != 'O':
-                print('Wrong matrix')
+                print('Wrong matrix') #checks if metrix is correct
             else:
                 lists[x][y] = z
     else:
@@ -63,3 +62,6 @@ while True:
     for i in lists:
         print(i)
     winCheck()
+    if winCheck() == True:
+        print('We Have A Winner!')
+        break
