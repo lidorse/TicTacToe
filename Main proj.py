@@ -2,6 +2,7 @@ lists = [['_', '_', '_'], ['_', '_', '_'], ['_', '_', '_']]
 
 m1 = 'X'
 m2 = 'O'
+m3 = 'X' or 'O'
 
 def winCheck():
     '''
@@ -31,6 +32,10 @@ def winCheck():
         return True
     elif lists[0][2] == lists[1][1] == lists[2][0] == m2:
         return True
+'''def boardIsFull():
+    for row in lists:
+        if row[0] == m3 and row[1] == m3 and row[2] == m3:
+            return True'''
 
 while True:
     try:
@@ -57,3 +62,7 @@ while True:
     if winCheck() == True:
         print('We Have A Winner!')
         break
+    '''boardIsFull()
+    if boardIsFull() == True:
+        print('Its a Tie!')
+        lists.clear()'''
