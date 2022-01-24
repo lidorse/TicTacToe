@@ -62,7 +62,3 @@ while True:
     if winCheck() == True:
         print('We Have A Winner!')
         break
-    '''boardIsFull()
-    if boardIsFull() == True:
-        print('Its a Tie!')
-        lists.clear()'''
