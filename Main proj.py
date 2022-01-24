@@ -38,7 +38,7 @@ while True:
         y = int(input('Please enter Ta number: ').upper())
 
         if 0 <= x <= 2 and 0 <= y <= 2:  #checks if input in range
-            if lists[x][y] == 'X' and 'O': #checks if place occupied
+            if lists[x][y] == 'X' or lists[x][y] == 'O': #checks if place occupied
                 print('Place Occupied...')
             else:
                 z = input('Choose X or O: ').upper() #checks if metrix is correct
