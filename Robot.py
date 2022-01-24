@@ -1,4 +1,3 @@
-import random
 lists = [['_', '_', '_'], ['_', '_', '_'], ['_', '_', '_']]
 
 m1 = 'X'
@@ -34,20 +33,23 @@ def winCheck():
         return True
 
 while True:
-    x = int(input('Please enter row number: ').upper())
-    y = int(input('Please enter Ta number: ').upper())
+    try:
+        x = int(input('Please enter row number: ').upper())
+        y = int(input('Please enter Ta number: ').upper())
 
-    if 0 <= x <= 2 and 0 <= y <= 2:  #checks if input in range
-        if lists[x][y] == 'X' and 'O':
-            print('Place Occupied...') #checks if place occupied
-        else:
-            z = input('Choose X or O: ').upper()
-            if z != 'X' and z != 'O':
-                print('Wrong matrix') #checks if metrix is correct
+        if 0 <= x <= 2 and 0 <= y <= 2:  #checks if input in range
+            if lists[x][y] == 'X' or lists[x][y] == 'O': #checks if place occupied
+                print('Place Occupied...')
             else:
-                lists[x][y] = z
-    else:
-        print('Invalid position')
+                z = input('Choose X or O: ').upper() #checks if metrix is correct
+                if z != 'X' and z != 'O':
+                    print('Wrong matrix')
+                else:
+                    lists[x][y] = z
+        else:
+            print('Invalid position')
+    except:
+        print('Error Value, Please try again')
 #robot
     rd1 = random.randint(0, 2)
     rd2 = random.randint(0, 2)
